@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\{
+    ShowTweets
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('customers', 'CustomerController');
-Route::post('register', 'CustomerController@index')->name('register');
-Route::post('login', 'CustomerController@index')->name('login');
+Route::get('tweets', ShowTweets::class);
+
+// Route::resource('customers', 'CustomerController');
+// Route::post('register', 'CustomerController@index')->name('register');
+// Route::post('login', 'CustomerController@index')->name('login');
